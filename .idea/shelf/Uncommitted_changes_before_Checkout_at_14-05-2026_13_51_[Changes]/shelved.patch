@@ -1,0 +1,19 @@
+Index: pandas.ipynb
+===================================================================
+diff --git a/pandas.ipynb b/pandas.ipynb
+--- a/pandas.ipynb	(revision 0f6258de9c89cdef17ed58a65598a49cc243fced)
++++ b/pandas.ipynb	(date 1778746753515)
+@@ -1,0 +1,13 @@
++{
++ "cells": [
++  {
++   "metadata": {},
++   "cell_type": "raw",
++   "source": "",
++   "id": "128274cfad736889"
++  }
++ ],
++ "metadata": {},
++ "nbformat": 4,
++ "nbformat_minor": 5
++}

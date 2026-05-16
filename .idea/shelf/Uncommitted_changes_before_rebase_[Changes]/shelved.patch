@@ -1,0 +1,1192 @@
+Index: Numpy.ipynb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Numpy.ipynb b/Numpy.ipynb
+new file mode 100644
+--- /dev/null	(date 1778748767433)
++++ b/Numpy.ipynb	(date 1778748767433)
+@@ -0,0 +1,1182 @@
++{
++ "cells": [
++  {
++   "cell_type": "code",
++   "id": "initial_id",
++   "metadata": {
++    "collapsed": true,
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:07:45.767897800Z",
++     "start_time": "2026-05-12T07:07:45.742546800Z"
++    }
++   },
++   "source": "import numpy as np\n",
++   "outputs": [],
++   "execution_count": 7
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:07:59.404626100Z",
++     "start_time": "2026-05-12T07:07:59.380248100Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "a = np.arange(15).reshape(3,5)\n",
++   "id": "3a3f6d85b8a74f8",
++   "outputs": [],
++   "execution_count": 9
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:08:10.401831800Z",
++     "start_time": "2026-05-12T07:08:10.278305200Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "a",
++   "id": "1a0bdd01deaecdb3",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[ 0,  1,  2,  3,  4],\n",
++       "       [ 5,  6,  7,  8,  9],\n",
++       "       [10, 11, 12, 13, 14]])"
++      ]
++     },
++     "execution_count": 10,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 10
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:17:44.525422700Z",
++     "start_time": "2026-05-12T08:17:44.081080600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([[0, 1, 2, 3, 4],[5, 6, 7, 8, 9],[10, 11, 12, 13, 14]])\n",
++    "a.shape\n"
++   ],
++   "id": "3e200747cf85ad01",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "(3, 5)"
++      ]
++     },
++     "execution_count": 26,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 26
++  },
++  {
++   "metadata": {},
++   "cell_type": "markdown",
++   "source": "a.ndim\n",
++   "id": "d15748ae101a65cb"
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:15:33.267308600Z",
++     "start_time": "2026-05-12T07:15:33.175230600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "\n",
++    "a.ndim"
++   ],
++   "id": "2dc92223fa3e4fbc",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "2"
++      ]
++     },
++     "execution_count": 20,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 20
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:19:45.930101200Z",
++     "start_time": "2026-05-12T07:19:45.843831600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "a.dtype.name",
++   "id": "cc79a56dbe70ca9b",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "'int64'"
++      ]
++     },
++     "execution_count": 21,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 21
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:19:59.575023100Z",
++     "start_time": "2026-05-12T07:19:59.462723800Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "a.size",
++   "id": "59446d2548049906",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "15"
++      ]
++     },
++     "execution_count": 22,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 22
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:20:37.304110300Z",
++     "start_time": "2026-05-12T07:20:37.222590900Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "type(a)",
++   "id": "3099c8eefa9786fb",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "numpy.ndarray"
++      ]
++     },
++     "execution_count": 23,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 23
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:21:09.568409Z",
++     "start_time": "2026-05-12T07:21:09.481126100Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "b = np.array([6, 7, 8])\n",
++    "b"
++   ],
++   "id": "4974793319743a87",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([6, 7, 8])"
++      ]
++     },
++     "execution_count": 24,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 24
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T07:22:00.678770800Z",
++     "start_time": "2026-05-12T07:22:00.597940100Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "type(b)",
++   "id": "972110e317232100",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "numpy.ndarray"
++      ]
++     },
++     "execution_count": 25,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 25
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:20:25.106431Z",
++     "start_time": "2026-05-12T08:20:24.961983900Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([1.2, 3.5, 5.1])\n",
++    "a"
++   ],
++   "id": "b1a021892d05eba3",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([1.2, 3.5, 5.1])"
++      ]
++     },
++     "execution_count": 27,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 27
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:20:42.653583300Z",
++     "start_time": "2026-05-12T08:20:42.538100100Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "a.dtype\n",
++   "id": "ef968cb59d48e717",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "dtype('float64')"
++      ]
++     },
++     "execution_count": 28,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 28
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:28:28.755554900Z",
++     "start_time": "2026-05-12T08:28:28.410917300Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "print(\"Hello World\")",
++   "id": "da516dc90ebb67fd",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Hello World\n"
++     ]
++    }
++   ],
++   "execution_count": 29
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:29:36.536406200Z",
++     "start_time": "2026-05-12T08:29:36.446870Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "import math\n",
++    "print(math.sqrt(25))"
++   ],
++   "id": "ff68bf1f8b1e5a9a",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "5.0\n"
++     ]
++    }
++   ],
++   "execution_count": 30
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:32:45.113882500Z",
++     "start_time": "2026-05-12T08:32:44.946907Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([[1,2,3],[4,5,6],[7,8,9]])\n",
++    "print(a.shape)\n",
++    "print(a.ndim)\n",
++    "print(a.size)"
++   ],
++   "id": "7087dcedc142d012",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "(3, 3)\n",
++      "2\n",
++      "9\n"
++     ]
++    }
++   ],
++   "execution_count": 31
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:33:43.914249600Z",
++     "start_time": "2026-05-12T08:33:43.799020900Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "np.zeros((2,3))",
++   "id": "71bf70b93fc79bff",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[0., 0., 0.],\n",
++       "       [0., 0., 0.]])"
++      ]
++     },
++     "execution_count": 33,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 33
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:39:55.517138200Z",
++     "start_time": "2026-05-12T08:39:55.311527600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "np.ones((2,2))",
++   "id": "7d0ea4a291020b17",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[1., 1.],\n",
++       "       [1., 1.]])"
++      ]
++     },
++     "execution_count": 34,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 34
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:40:16.483004700Z",
++     "start_time": "2026-05-12T08:40:16.337254800Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "np.random.rand(3,3)",
++   "id": "218a9d9de00b4460",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[0.20559536, 0.34747407, 0.65569028],\n",
++       "       [0.12579583, 0.60479467, 0.07415204],\n",
++       "       [0.00731966, 0.30072582, 0.4973903 ]])"
++      ]
++     },
++     "execution_count": 35,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 35
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:40:45.140379600Z",
++     "start_time": "2026-05-12T08:40:45.002699300Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "np.arange(1,10)",
++   "id": "f6ab9d6cb6489732",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([1, 2, 3, 4, 5, 6, 7, 8, 9])"
++      ]
++     },
++     "execution_count": 37,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 37
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:48:26.203322800Z",
++     "start_time": "2026-05-12T08:48:26.087866600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.arange(12)\n",
++    "b = a.reshape(3,4)\n",
++    "print(b)"
++   ],
++   "id": "c8324b0b05894c1c",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[[ 0  1  2  3]\n",
++      " [ 4  5  6  7]\n",
++      " [ 8  9 10 11]]\n"
++     ]
++    }
++   ],
++   "execution_count": 41
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:50:24.441538500Z",
++     "start_time": "2026-05-12T08:50:24.346599300Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([1,2,3])\n",
++    "b = np.array([4,5,6])\n",
++    "print(a + b)"
++   ],
++   "id": "7cccbe704b4fefe5",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[5 7 9]\n"
++     ]
++    }
++   ],
++   "execution_count": 42
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:51:55.950576300Z",
++     "start_time": "2026-05-12T08:51:55.835965800Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([[1,2],[3,4]])\n",
++    "b = np.array([[5,6],[7,8]])\n",
++    "\n",
++    "print(a @ b)"
++   ],
++   "id": "ffbf84c4adb58deb",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[[19 22]\n",
++      " [43 50]]\n"
++     ]
++    }
++   ],
++   "execution_count": 44
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:56:39.519224300Z",
++     "start_time": "2026-05-12T08:56:39.470962500Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([10,20,30])\n",
++    "print(a[0])"
++   ],
++   "id": "d75fd78a3da68b3d",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "10\n"
++     ]
++    }
++   ],
++   "execution_count": 46
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T08:59:50.010296900Z",
++     "start_time": "2026-05-12T08:59:49.866968800Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([1,2,3,4,5])\n",
++    "print(a[1:4])"
++   ],
++   "id": "ecd314002bf2b863",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[2 3 4]\n"
++     ]
++    }
++   ],
++   "execution_count": 47
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T09:09:28.948486100Z",
++     "start_time": "2026-05-12T09:09:28.812580500Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([[1,2,3],[4,5,6]])\n",
++    "print(a[1,2])"
++   ],
++   "id": "efad611c84e6bacc",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "6\n"
++     ]
++    }
++   ],
++   "execution_count": 49
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T09:37:48.055428Z",
++     "start_time": "2026-05-12T09:37:47.966758700Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "b = np.array([1,2,3,4,5,6])\n",
++    "print(b + 5)"
++   ],
++   "id": "89583f6aaa09f5b5",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[ 6  7  8  9 10 11]\n"
++     ]
++    }
++   ],
++   "execution_count": 54
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T09:50:04.109112100Z",
++     "start_time": "2026-05-12T09:50:03.974226600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([1,2,3])\n",
++    "\n",
++    "print(a*10)"
++   ],
++   "id": "fe40e3cf4939df6d",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[10 20 30]\n"
++     ]
++    }
++   ],
++   "execution_count": 56
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-12T10:01:14.606774800Z",
++     "start_time": "2026-05-12T10:01:14.503543300Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a= np.array([0, 1, 4, 90])\n",
++    "print(a < 35)\n"
++   ],
++   "id": "7bb82e674e7843b2",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[ True  True  True False]\n"
++     ]
++    }
++   ],
++   "execution_count": 62
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T05:16:18.427846Z",
++     "start_time": "2026-05-13T05:16:18.351317600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "b = np.array([(1.5, 2, 3), (4, 5, 6)])\n",
++    "b\n"
++   ],
++   "id": "c34cb4b26e5ec232",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[1.5, 2. , 3. ],\n",
++       "       [4. , 5. , 6. ]])"
++      ]
++     },
++     "execution_count": 64,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 64
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T05:26:53.618677200Z",
++     "start_time": "2026-05-13T05:26:53.505492Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.ones((2,3,4))\n",
++    "a\n"
++   ],
++   "id": "e31c2814512ccbd8",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[[1., 1., 1., 1.],\n",
++       "        [1., 1., 1., 1.],\n",
++       "        [1., 1., 1., 1.]],\n",
++       "\n",
++       "       [[1., 1., 1., 1.],\n",
++       "        [1., 1., 1., 1.],\n",
++       "        [1., 1., 1., 1.]]])"
++      ]
++     },
++     "execution_count": 70,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 70
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T06:00:42.530014Z",
++     "start_time": "2026-05-13T06:00:42.381921600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.arange(10, 30, 5)\n",
++    "a\n"
++   ],
++   "id": "fc74fc51046b5b5d",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([10, 15, 20, 25])"
++      ]
++     },
++     "execution_count": 72,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 72
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T06:02:27.539872900Z",
++     "start_time": "2026-05-13T06:02:27.424329100Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.linspace(0,2,9)\n",
++    "a"
++   ],
++   "id": "59a8d5abff163127",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([0.  , 0.25, 0.5 , 0.75, 1.  , 1.25, 1.5 , 1.75, 2.  ])"
++      ]
++     },
++     "execution_count": 74,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 74
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T06:23:29.982581700Z",
++     "start_time": "2026-05-13T06:23:29.922390200Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "A = np.array([[1, 1],[0, 1]])\n",
++    "B = np.array([[2, 0],[3, 4]])\n",
++    "A * B"
++   ],
++   "id": "1dbc4c14cbd6b528",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[2, 0],\n",
++       "       [0, 4]])"
++      ]
++     },
++     "execution_count": 76,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 76
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T06:24:06.230101400Z",
++     "start_time": "2026-05-13T06:24:06.153279300Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "A @ B",
++   "id": "7889f552de27891",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[5, 4],\n",
++       "       [3, 4]])"
++      ]
++     },
++     "execution_count": 77,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 77
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T06:24:30.222073200Z",
++     "start_time": "2026-05-13T06:24:30.115014600Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "A.dot(B)",
++   "id": "dde609b0b8b2935a",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[5, 4],\n",
++       "       [3, 4]])"
++      ]
++     },
++     "execution_count": 78,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 78
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T09:01:00.324477800Z",
++     "start_time": "2026-05-13T09:01:00.201988400Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "def function(x,y):\n",
++    "    return 10 * x + y\n",
++    "b = np.fromfunction(function, (5,4), dtype=int)\n",
++    "b"
++   ],
++   "id": "9df31ee746e2833d",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[ 0,  1,  2,  3],\n",
++       "       [10, 11, 12, 13],\n",
++       "       [20, 21, 22, 23],\n",
++       "       [30, 31, 32, 33],\n",
++       "       [40, 41, 42, 43]])"
++      ]
++     },
++     "execution_count": 104,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 104
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T08:54:19.994334Z",
++     "start_time": "2026-05-13T08:54:19.892096100Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "b[2, 1]",
++   "id": "b629ce0bda9b6ec0",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "np.int64(11)"
++      ]
++     },
++     "execution_count": 102,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 102
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T09:01:08.235298Z",
++     "start_time": "2026-05-13T09:01:08.086542500Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "b[0:5, 1]",
++   "id": "bc28d1467f1f4732",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([ 1, 11, 21, 31, 41])"
++      ]
++     },
++     "execution_count": 105,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 105
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T11:13:40.523317800Z",
++     "start_time": "2026-05-13T11:13:39.338798700Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "    b[0:5, 1]",
++   "id": "c3bce776ff09d9fd",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([ 1, 11, 21, 31, 41])"
++      ]
++     },
++     "execution_count": 106,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 106
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-13T11:48:36.542890600Z",
++     "start_time": "2026-05-13T11:48:36.124776200Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "b[1:3,:]",
++   "id": "5e721a23a707ad2c",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[10, 11, 12, 13],\n",
++       "       [20, 21, 22, 23]])"
++      ]
++     },
++     "execution_count": 108,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 108
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-14T05:53:51.577658900Z",
++     "start_time": "2026-05-14T05:53:51.075462100Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "b = np.array([[0,1,2,3], [10,11,12,13]])\n",
++    "for element in b.flat:\n",
++    "    print(element)"
++   ],
++   "id": "dbd7ff0244aec9a9",
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "0\n",
++      "1\n",
++      "2\n",
++      "3\n",
++      "10\n",
++      "11\n",
++      "12\n",
++      "13\n"
++     ]
++    }
++   ],
++   "execution_count": 110
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-14T05:56:22.951092200Z",
++     "start_time": "2026-05-14T05:56:22.747846700Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "b.ravel()",
++   "id": "8e073c680b42ff6f",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([ 0,  1,  2,  3, 10, 11, 12, 13])"
++      ]
++     },
++     "execution_count": 111,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 111
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-14T05:57:27.083516500Z",
++     "start_time": "2026-05-14T05:57:26.988503700Z"
++    }
++   },
++   "cell_type": "code",
++   "source": "b.T",
++   "id": "8df033bd1fe0f0ba",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[ 0, 10],\n",
++       "       [ 1, 11],\n",
++       "       [ 2, 12],\n",
++       "       [ 3, 13]])"
++      ]
++     },
++     "execution_count": 112,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 112
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-14T06:20:53.427265100Z",
++     "start_time": "2026-05-14T06:20:53.184991Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([1,2])\n",
++    "b = np.array([3,4])\n",
++    "np.vstack((a,b))\n"
++   ],
++   "id": "637486aabb0ab06c",
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "array([[1, 2],\n",
++       "       [3, 4]])"
++      ]
++     },
++     "execution_count": 114,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "execution_count": 114
++  },
++  {
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2026-05-14T08:44:14.316347500Z",
++     "start_time": "2026-05-14T08:44:13.735145900Z"
++    }
++   },
++   "cell_type": "code",
++   "source": [
++    "a = np.array([1,2])\n",
++    "b = np.array([3,4])\n",
++    "np.hstack((a,b))"
++   ],
++   "id": "28e858dd3c8505ff",
++   "outputs": [
++    {
++     "ename": "NameError",
++     "evalue": "name 'np' is not defined",
++     "output_type": "error",
++     "traceback": [
++      "\u001B[31m---------------------------------------------------------------------------\u001B[39m",
++      "\u001B[31mNameError\u001B[39m                                 Traceback (most recent call last)",
++      "\u001B[36mCell\u001B[39m\u001B[36m \u001B[39m\u001B[32mIn[1]\u001B[39m\u001B[32m, line 1\u001B[39m\n\u001B[32m----> \u001B[39m\u001B[32m1\u001B[39m a = np.array([\u001B[32m1\u001B[39m,\u001B[32m2\u001B[39m])\n\u001B[32m      2\u001B[39m b = np.array([\u001B[32m3\u001B[39m,\u001B[32m4\u001B[39m])\n\u001B[32m      3\u001B[39m np.hstack((a,b))\n",
++      "\u001B[31mNameError\u001B[39m: name 'np' is not defined"
++     ]
++    }
++   ],
++   "execution_count": 1
++  },
++  {
++   "metadata": {},
++   "cell_type": "code",
++   "outputs": [],
++   "execution_count": null,
++   "source": "",
++   "id": "e5a870fc00f930df"
++  }
++ ],
++ "metadata": {
++  "kernelspec": {
++   "display_name": "Python 3",
++   "language": "python",
++   "name": "python3"
++  },
++  "language_info": {
++   "codemirror_mode": {
++    "name": "ipython",
++    "version": 2
++   },
++   "file_extension": ".py",
++   "mimetype": "text/x-python",
++   "name": "python",
++   "nbconvert_exporter": "python",
++   "pygments_lexer": "ipython2",
++   "version": "2.7.6"
++  }
++ },
++ "nbformat": 4,
++ "nbformat_minor": 5
++}
